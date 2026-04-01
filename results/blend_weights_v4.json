@@ -1,0 +1,7 @@
+{
+  "lgb_quantile": 0.0,
+  "lgb_l2_mono": 0.0,
+  "lgb_huber": 1.5178830414797062e-17,
+  "lgb_fair": 1.0,
+  "lgb_tuned_v4": 2.6020852139652106e-17
+}

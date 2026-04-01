@@ -1,0 +1,35 @@
+{
+  "train_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "val_years": [
+    2022
+  ],
+  "test_years": [
+    2023,
+    2024
+  ],
+  "max_resolution_days": 90,
+  "train_count": 1190355,
+  "val_count": 224371,
+  "test_count": 409130,
+  "total_count": 1823856,
+  "mean_resolution_days": 4.498225297206598,
+  "median_resolution_days": 0.47204282407407405,
+  "std_resolution_days": 11.585588772245792,
+  "skewness": 4.233944590586775,
+  "kurtosis": 20.13253056964297,
+  "pct_within_1d": 64.3184001368529,
+  "pct_within_3d": 75.9415765279715,
+  "pct_within_7d": 84.7503311664956,
+  "pct_within_14d": 91.45787825354633,
+  "pct_within_30d": 95.85159135370336,
+  "pct_within_60d": 98.67352466422787,
+  "pct_within_90d": 100.0
+}

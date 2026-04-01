@@ -1,0 +1,54 @@
+# Boston 311 Resolution Time Prediction - Configuration
+
+data:
+  train_years: [2015, 2016, 2017, 2018, 2019, 2020, 2021]
+  val_years: [2022]
+  test_years: [2023, 2024]
+  target_col: "resolution_days"
+  target_col_log: "resolution_days_log"
+  log_target: true
+  max_resolution_days: 90   # Cap outliers at 90 days 
+  min_resolution_days: 0    # No negative resolution times
+
+features:
+  cyclical_encoding: true
+  target_encoding_smoothing: 10
+  rolling_window_days: [30, 60, 90]
+  categorical_cols:
+    - REASON
+    - TYPE
+    - SUBJECT
+    - Department
+    - Source
+    - QUEUE
+    - neighborhood
+    - fire_district
+    - pwd_district
+    - city_council_district
+    - police_district
+    - ward
+    - LOCATION_ZIPCODE
+    - Property_Type
+    - land_usage
+
+optuna:
+  n_trials: 30           # Used by Step 7 (robust loss tuning)
+  n_trials_deep: 50      # Used by Step 9 (deeper exploration experiments)
+  timeout: 600           # seconds
+  n_cv_splits: 3
+
+random_seed: 42
+
+models:
+  baselines:
+    - mean
+    - median
+    - linear_regression
+    - ridge
+    - lasso
+    - decision_tree
+  advanced:
+    - random_forest
+    - xgboost
+    - lightgbm
+    - catboost
