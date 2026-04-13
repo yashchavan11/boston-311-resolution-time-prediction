@@ -151,7 +151,7 @@ Pipeline scripts in `scripts/` are **orchestration-only** -- all reusable logic 
 ```bash
 # Setup
 python -m venv venv
-venv/Scripts/activate          # Windows
+venv/Scripts/activate          
 pip install -r requirements.txt
 
 # Sequential pipeline
