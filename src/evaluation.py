@@ -92,8 +92,11 @@ def regression_metrics(
     else:
         metrics[f"{prefix}wape"] = np.nan
 
-    # MASE -- Mean Absolute Scaled Error (vs naïve seasonal forecast)
-    # naïve forecast = global mean (equivalent to mean baseline)
+    # MASE -- Mean Absolute Scaled Error
+    # Denominator is the test-set MAD (mean absolute deviation from the test
+    # mean).  This is NOT the MAE of the training-set mean baseline; it is the
+    # error of the best constant predictor on the evaluation set itself.
+    # Values < 1 indicate the model beats a constant-mean predictor.
     naive_mae = np.mean(np.abs(y_true_orig - np.mean(y_true_orig)))
     if naive_mae > 0:
         metrics[f"{prefix}mase"] = mean_absolute_error(y_true_orig, y_pred_orig) / naive_mae

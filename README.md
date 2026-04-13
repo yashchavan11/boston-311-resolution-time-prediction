@@ -14,8 +14,8 @@ This project predicts how long a newly created Boston 311 service request will t
 | **MAE** | 2.669 days |
 | **Best Tuned LightGBM** | Fair loss, Optuna-tuned, MAE = 2.696 days |
 | **Improvement over mean baseline** | 33.3% (CatBoost GPU) / 32.6% (Tuned LightGBM) |
-| **Improvement over SARIMA** | 24.1% |
-| **Models compared** | 21 configurations across 6 model families |
+| **Improvement over SARIMA** | 24.8% (CatBoost) / 24.1% (Tuned LightGBM) |
+| **Models compared** | 22 configurations across 6 model families |
 
 ## Dataset
 
@@ -114,7 +114,7 @@ All features respect a strict **creation-time feature boundary** -- only informa
 | SARIMA(1,1,1)(1,1,1,52) | 3.551 | 11.15 |
 | ARIMA(2,1,2) weekly | 3.554 | 11.14 |
 
-**ML advantage over SARIMA: 24.1% lower MAE.**
+**ML advantage over SARIMA: 24.1% lower MAE (LGB Tuned) / 24.8% (CatBoost MAE).**
 
 ### Step 6: Improvement Experiments
 

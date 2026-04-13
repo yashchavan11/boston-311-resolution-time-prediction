@@ -8,6 +8,16 @@ from typing import Tuple, Dict, List, Optional
 # -- Column name mapping ---------------------------------------------------
 # The data.boston.gov CSVs use lowercase column names.
 # Standardized to canonical names for consistency across the project.
+# Update--------------------------------------------------------------------
+# # The raw CSVs from data.boston.gov deliver all column names in lowercase
+# (e.g., "type", "reason", "department"). 
+# However, the City of Boston's data dictionary and documentation historically displayed these same columns in mixed cases. 
+# This mapping renames columns to a convention loosely based on that documentation style: 
+# core fields use ALL_CAPS, a few columns use Title Case, and district/geographic codes are left lowercase. 
+# The inconsistency is cosmetic and has no effect on modeling. (And I'll have to rerun the entire pipeline again to do any modifications now lol) 
+# Also, Boston migrated to a new 311 backend in October 2025 with entirely different column names; 
+# this mapping applies only to the legacy system (2015-2025).
+
 COLUMN_MAP = {
     "case_enquiry_id": "CASE_ENQUIRY_ID",
     "open_dt": "OPEN_DT",

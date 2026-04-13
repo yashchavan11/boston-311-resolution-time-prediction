@@ -51,6 +51,29 @@ catboost_info/
 .DS_Store
 Thumbs.db
 
+# Docs files 
+docs/project_audit_summary.md
+docs/research_paper_supporting_notes.md
+
+# LaTeX build/temp files in docs
+docs/*.aux
+docs/*.out
+docs/*.bbl
+docs/*.blg
+docs/*.log
+docs/*.fdb_latexmk
+docs/*.fls
+docs/*.synctex.gz
+docs/*.toc
+docs/*.lof
+docs/*.lot
+docs/*.nav
+docs/*.snm
+docs/*.vrb
+
+# Optional temporary docs workspace
+docs/.paper_tmp/
+
 # Keep directory structure
 !data/raw/.gitkeep
 !data/processed/.gitkeep
