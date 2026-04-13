@@ -177,10 +177,10 @@ python scripts/10_generate_report.py          # PDF report
 |-- configs/
 |   |-- model_configs.yaml          # Data and model configuration
 |-- docs/
-|   |-- paper.tex                  # Full-length conference manuscript (LaTeX)
-|   |-- references.bib             # Bibliography (21 verified references)
+|   |-- paper.tex                  # Manuscript (LaTeX)
+|   |-- references.bib             # Bibliography (21 references)
 |   |-- paper.pdf                  # Compiled manuscript (10 pages)
-|   |-- figures/                   # Publication figures used in paper
+|   |-- figures/                   # Figures used in paper
 |   |   |-- arima_comparison.png
 |   |   |-- eda_resolution_distribution.png
 |   |   |-- predicted_vs_actual_v4.png
@@ -189,8 +189,6 @@ python scripts/10_generate_report.py          # PDF report
 |   |-- Project Proposal.pdf       # Academic proposal
 |   |-- Lit_Review.pdf             # Literature review
 |   |-- Project_Report.pdf         # Generated PDF report
-|   |-- research_paper_supporting_notes.md  # Evidence trail for paper claims
-|   |-- project_audit_summary.md   # Paper audit log
 |-- src/                            # Shared source modules
 |   |-- __init__.py
 |   |-- data_loader.py              # Data downloading and loading
