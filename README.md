@@ -49,7 +49,7 @@ This project predicts how long a newly created Boston 311 service request will t
 
 ## Feature Engineering (99 Features)
 
-All features respect a strict **creation-time feature boundary** -- only information available when a request is created is used. This ensures predictions can be made immediately for each incoming request. Unlike SWIFT [1], which forecasts weekly aggregate resolution times using historical time-series, this project predicts resolution time at the individual request level using per-request ML features.
+All features respect a strict **creation-time feature boundary** -- only information available when a request is created is used. This ensures predictions can be made immediately for each incoming request.
 
 | Category | Count | Examples |
 |----------|-------|----------|
@@ -171,50 +171,47 @@ python scripts/10_generate_report.py          # PDF report
 
 ```
 .
-|-- README.md                       # Project documentation
-|-- requirements.txt                # Python dependencies
+|-- README.md                         # Project documentation
+|-- requirements.txt                  # Python dependencies
 |-- .gitignore
 |-- configs/
-|   |-- model_configs.yaml          # Data and model configuration
+|   |-- model_configs.yaml            # Data and model configuration
 |-- docs/
-|   |-- paper.tex                  # Manuscript (LaTeX)
-|   |-- references.bib             # Bibliography (21 references)
-|   |-- paper.pdf                  # Compiled manuscript (10 pages)
-|   |-- figures/                   # Figures used in paper
+|   |-- paper.tex                     # Manuscript (LaTeX)
+|   |-- references.bib                # Bibliography (21 references)
+|   |-- paper.pdf                     # Compiled manuscript (10 pages)
+|   |-- figures/                      # Figures used in paper
 |   |   |-- arima_comparison.png
 |   |   |-- eda_resolution_distribution.png
 |   |   |-- predicted_vs_actual_v4.png
 |   |   |-- shap_importance_v4.png
 |   |   |-- walkforward_stability.png
-|   |-- Project Proposal.pdf       # Academic proposal
-|   |-- Lit_Review.pdf             # Literature review
-|   |-- Project_Report.pdf         # Generated PDF report
-|-- src/                            # Shared source modules
+|   |-- Project Proposal.pdf          # Academic proposal
+|   |-- Lit_Review.pdf                # Literature review
+|   |-- Project_Report.pdf            # PDF report
+|-- src/                              # Shared source modules
 |   |-- __init__.py
-|   |-- data_loader.py              # Data downloading and loading
-|   |-- preprocessing.py            # Cleaning, filtering, splitting
-|   |-- features.py                 # Feature engineering (99 features + monotonic constraints)
-|   |-- models.py                   # Model definitions + data loading utilities
-|   |-- evaluation.py               # Metrics computation
-|   |-- utils.py                    # Paths, config, seed, plotting
-|-- scripts/                        # Orchestration pipeline scripts
-|   |-- 01_data_collection.py       # Step 1: Download 311 data
-|   |-- 02_preprocessing.py         # Step 2: Clean, filter, temporal split
-|   |-- 03_eda.py                   # Step 3: Exploratory data analysis
-|   |-- 04_feature_engineering.py   # Step 4: Build 99 features
-|   |-- 05_baseline_models.py       # Step 5: Statistical + linear baselines
-|   |-- 06_intermediate_models.py   # Step 6: Gradient boosting (default)
-|   |-- 07_advanced_models.py       # Step 7: Robust losses, tuning, ensemble
-|   |-- 08_arima_comparison.py      # Step 8: ARIMA/SARIMA comparison
+|   |-- data_loader.py                # Data downloading and loading
+|   |-- preprocessing.py              # Cleaning, filtering, splitting
+|   |-- features.py                   # Feature engineering (99 features + monotonic constraints)
+|   |-- models.py                     # Model definitions + data loading utilities
+|   |-- evaluation.py                 # Metrics computation
+|   |-- utils.py                      # Paths, config, seed, plotting
+|-- scripts/                          # Orchestration pipeline scripts
+|   |-- 01_data_collection.py         # Step 1: Download 311 data
+|   |-- 02_preprocessing.py           # Step 2: Clean, filter, temporal split
+|   |-- 03_eda.py                     # Step 3: Exploratory data analysis
+|   |-- 04_feature_engineering.py     # Step 4: Build 99 features
+|   |-- 05_baseline_models.py         # Step 5: Statistical + linear baselines
+|   |-- 06_intermediate_models.py     # Step 6: Gradient boosting (default)
+|   |-- 07_advanced_models.py         # Step 7: Robust losses, tuning, ensemble
+|   |-- 08_arima_comparison.py        # Step 8: ARIMA/SARIMA comparison
 |   |-- 09_improvement_experiments.py # Step 9: CatBoost GPU, walk-forward
-|   |-- 10_generate_report.py       # Step 10: PDF report generation
-|-- data/raw/                       # Raw CSV data (2015-2024)
-|-- data/processed/                 # Processed features
-|-- models/                         # Saved model files
-|-- results/                        # Result tables (CSV)
-|-- figures/                        # Publication-quality figures
+|   |-- 10_generate_report.py         # Step 10: PDF report generation
+|-- data/raw/                         # Raw CSV data (2015-2024)
+|-- data/processed/                   # Processed features
+|-- models/                           # Saved model files
+|-- results/                          # Result tables (CSV)
+|-- figures/                          # Result figures
 ```
 
-## References
-
-[1] R. Raj, A. Ramesh, A. Seetharam, and D. DeFazio, "SWIFT: A non-emergency response prediction system using sparse Gaussian Conditional Random Fields," *Pervasive Mob. Comput.*, vol. 71, p. 101317, Feb. 2021.
